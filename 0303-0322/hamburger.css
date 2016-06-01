@@ -1,0 +1,80 @@
+  /*漢堡要用絕對和相對定位去置作*/
+        .hamburger {
+            position: relative;
+            width:70px;
+            height:70px;
+            cursor: pointer;/*手指游標*/
+        }
+        .hamburger span {
+            position: absolute;
+            display:block;/*行內元素沒有寬高，會針對內容而有，因此要轉區塊*/
+            width:30px;
+            height:5px;
+            background-color: #fff;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin: auto;
+            transition: all .5s;
+        }
+        .hamburger span::before {
+            content:"";
+            margin:auto;
+            position: absolute;
+            display:block;
+            width:30px;
+            height:5px;
+            background-color: #fff;
+            top:-10px;
+            transition: top .5s,transform .5s .5s;
+        }/*利用::befor來製做上方的橫線，並它會以原本來當作參考點*/
+        .hamburger span::after {
+            content:"";
+            margin:auto;
+            position: absolute;
+            margin: auto;
+            display:block;
+            width:30px;
+            height:5px;
+            background-color: #fff;
+            bottom:-10px;
+            transition: bottom .5s,transform .5s .5s;
+        }/*利用::after來製做下方的橫線，並它會以原本來當作參考點*/
+        .hamburger-x span {
+            position: absolute;
+            display:block;
+            width:30px;
+            height:5px;
+            background-color: transparent;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin: auto;
+            transform: rotate(180deg);/*利用before和after的好處是在於當對原本的物件做旋轉與位移時，會同時一起做更改*/
+        }
+        .hamburger-x span::before {
+            content: "";
+            margin:auto;
+            position: absolute;
+            display: block;
+            width:30px;
+            height: 5px;
+            background-color: #fff;
+            top: 0;
+            transform: rotate(45deg);
+            transition: top .5s,transform .5s .5s;/*transition後的top .5s表運作時間,tranform .5s 表運作時間後的.5s表delay時間*/
+        }
+        .hamburger-x span::after {
+            content: "";
+            margin:auto;
+            position: absolute;
+            display: block;
+            width:30px;
+            height: 5px;
+            background-color: #fff;
+            bottom: 0;
+            transform: rotate(-45deg); 
+            transition: bottom .5s,transform .5s .5s;
+        }
