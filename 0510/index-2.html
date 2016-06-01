@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <style>
+        body,p,h1,h2,h3,h4,h5,h6,ul,img {
+                                         margin:0;
+                                         padding:0;
+                                        }
+        .full {
+               width:100%;
+              }
+        .fixed {
+                width:90%;
+                margin:auto;
+               }
+        .clearfix::after {
+                          content:"";
+                          display:block;
+                          clear:both;
+                         }
+        .left-float {
+                     float:left;
+                    }
+        .right-float {
+                      float:right;
+                     }
+        nav {
+             background-color:#353535;
+             position: fixed;
+             z-index: 9999;
+            }
+        #logo {
+                   width:240px;
+                   height:70px;
+                   background-image: url(images/logo.png);
+                   background-repeat: no-repeat;
+                   /*background-size: cover;*/
+                   background-position: center;
+                   }
+        .nav-box { 
+                  line-height: 70px;
+                 }
+        .nav-box ul li {
+                        height:70px;
+                        list-style: none;
+                        float:left;
+                        transition: all 1s;
+                       } 
+        .nav-box  ul li a {
+                           height:70px;
+                           color:#fff;
+                           font-family: sans-serif;
+                           font-weight:600;
+                           letter-spacing: 2px;
+                           text-decoration: none;
+                           padding-left:15px;
+                           padding-right:15px;
+                           transition: all 1s;
+                           display:block;
+                          }
+        .nav-box li:hover { 
+                           background-color: deeppink;
+                          }
+        .nav-box a:hover {
+                          display: block;
+                          height:50px;
+                          font-size: 16pt;
+                          border-bottom: 2pt solid ;
+                         }
+        header {
+                height:800px;
+                overflow: hidden;
+               }
+        .box-inside {
+                      margin-top:20px;
+                      margin-bottom:20px;
+                      }
+        .box-content {
+                       width:45%;
+                       margin-top:110px;
+                       padding-left:20px;
+                       padding-right:20px;
+                      }
+        .box-content h1 {
+                          font-family: sans-serif;
+                          font-weight: 800;
+                          font-size: 26pt;
+                          border-bottom: 4px solid #000000;
+                          padding-bottom: 5px;
+                         }
+        .box-content p {
+                         font-family:sans-serif;
+                         font-weight: 600;
+                         margin-top:20px;
+                        }
+        .gray { 
+               color: #4a4a4a;
+              }
+        .red {
+              color: red;
+             }
+        .box-picture {
+                      padding-left:10px;
+                      padding-right:10px;
+                     }
+        .box-picture-inside {
+                            width:220px;
+                            overflow: hidden;
+                            margin-left:10px;
+                            margin-right:10px;
+                            /*background-color:firebrick;*/
+                            }
+        .small-picture {
+                       width:220px;
+                       height:220px;
+                       /*background-color: aquamarine;*/
+                       margin-top:20px;
+                       margin-bottom:20px;
+                       overflow: hidden;
+                      }
+        .box2 {
+              position:relative;
+              }
+        .box2-content {
+                       width:100%;
+                       height:90px;
+                       text-align: center;
+                       color:#fff;
+                       background-color: rgba(48, 48, 48,.5);
+                       background-color: rgba(48, 48, 48,.5); 
+                       position:absolute;
+                       bottom:0;
+                       top:0;
+                       left:0;
+                       right:0;
+                       margin:auto;
+                       }
+        .box2-content h1 {
+                         font-size: 50px;
+                         }
+        .box2-content p {
+                         font-size: 18px;
+                        }
+        .contact {
+                 background-color:#1e1e1e;
+                 padding-top:20px;
+                 padding-bottom:20px;
+                 }
+        .contact-inside {
+                         text-align: center;
+                        }
+        .contact h1 {
+                     font-family:sans-serif;
+                     color:#6d8e3a;
+                     margin-bottom:20px;
+                     margin-top:20px;
+                    }
+        .contact-inside h2 {
+                           font-family: sans-serif;
+                           color:white;
+                           }
+        .contact-box { 
+                      width:50%;
+                      margin:auto;
+                      padding-bottom:20px;
+                     }
+        /*.contact-box-left {
+            width:300px;
+                            }
+        .contact-box-right {
+            width: 300px;
+                           }*/
+        .contact-icon {
+            width:250px;
+            margin: auto;
+            
+        }
+        .contact-box-icon {
+                           width:50px;
+                           text-align: center;
+                           margin-left: 5px;
+                           margin-right:5px;
+                          }
+        .contact-box-icon a {
+                             display: block;
+                             color:white;
+                             text-decoration: none;
+                            }
+        footer {
+                background-color: #272627;
+        }
+        .box3 {color:#fff;
+               text-align: center;
+               padding-top:10px;
+               padding-bottom:10px;}
+    </style>
+</head>
+<body>
+   <nav class="full clearfix">
+      <div class="fixed clearfix">
+       <div id="logo" class="left-float"></div>
+       <div class=" nav-box right-float">
+           <ul>
+               <li><a href="javascript:;">WELCOME</a></li>
+               <li><a href="javascript:;">FOOD</a></li>
+               <li><a href="javascript:;">BEER</a></li>
+               <li><a href="javascript:;">BREAD</a></li>
+               <li><a href="javascript:;">VISIT US</a></li>
+           </ul>
+        </div>
+       </div>
+   </nav>
+   <header class="full">
+       <img src="images/header-finish.jpg" alt="" width="100%">
+   </header>
+   <div class=" box full">
+       <div class="box-inside fixed clearfix">
+           <div class="box-content left-float">
+               <h1>The Starbucks Story</h1>
+               <p class="gray">Our story began in 1971. Back then we were a roaster and retailer of whole bean and ground coffee, tea and spices with a single store in Seattle’s Pike Place Market.<br>
+               Today, we are privileged to connect with millions of customers every day with exceptional products and more than 24,000 retail stores in 70 countries.
+               </p>
+               <p class="red">Our mission: to inspire and nurture the human spirit – one person, one cup and one neighborhood at a time.</p>
+           </div>
+           <div class="box-picture right-float">
+           <div class="box-picture-inside left-float">
+               <div class="small-picture">
+               <img src="images/food.jpg" alt="" width="350" ></div>
+               <div class="small-picture">
+               <img src="images/coffee.jpg" alt="" width="220"></div>
+           </div>
+           <div class="box-picture-inside left-float">
+               <div class="small-picture">
+               <img src="images/cake1.jpg" alt="" width="220"></div>
+               <div class="small-picture">
+               <img src="images/cake3.jpg" alt="" width="220"></div>
+           </div>
+           </div>
+       </div>
+   </div>
+   <div class=" box2 full">
+      <img src="images/food4.jpg" alt="" width="100%">
+      <div class=" box2-content ">
+       <h1>FINE DINING</h1>
+       <p>- Carefully crafted to pair perfectly with your menu. - </p>
+      </div>
+   </div>
+   <div class="box full">
+       <div class="box-inside fixed clearfix">
+           <div class="box-picture left-float"><img src="images/food123.png" alt=""  ></div>
+              <div class="box-content right-float">
+               <h1>OUR MEALS</h1>
+               <p class="gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid soluta molestias repellat a sequi, illum qui, cum! Fuga ducimus commodi fugiat distinctio nulla unde, architecto debitis incidunt facilis ad! Esse.<br>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis repellat excepturi sit unde maiores harum fugit accusamus. Rerum autem sint eos expedita at aut pariatur id perferendis facere! Dolorem, velit.
+           </div>
+       </div>
+   </div>
+    <div class=" box2 full">
+      <img src="images/bread3.jpg" alt="" width="100%">
+      <div class=" box2-content ">
+       <h1>Breakfast</h1>
+       <p>- Health & Fresh & handmade - </p>
+      </div>
+   </div>
+    <div class=" box full">
+       <div class="box-inside fixed clearfix">
+           <div class="box-content left-float">
+               <h1>OUR BREAD</h1>
+               <p class="gray">We love the smell of fresh baked bread.Each loaf is handmade at the crack of dawn, using only the simplest of ingredients to bring out smells and flavors that beckon the whole block. Stop by anytime and experience simplicity at its finest. </p>
+           </div>
+           <div class="box-picture right-float">
+           <div class="box-picture-inside left-float">
+              <img src="images/麥.jpg" alt="">
+           </div>
+           <div class="box-picture-inside right-float">
+              <img src="images/bread-5.jpg" alt="">
+           </div>
+           </div>
+       </div>
+   </div>
+   <div class="contact full">
+       <div class="contact-inside fixed clearfix">
+           <h1>COME IN</h1>
+           <h2>1513 HARVEST PARK AVE, DE 19987</h2>
+           <div class="contact-box clearfix">
+               <div class="contact-box-left left-float">
+                   <h1>CONNECT</h1>
+                   <div class="contact-icon clearfix">
+                   <div class="contact-box-icon left-float">
+                       <a href=""><span class="fa fa-twitter fa-2x"></span></a>
+                   </div>
+                   <div class="contact-box-icon left-float">
+                       <a href=""><span class="fa fa-facebook-square fa-2x"></span></a>
+                   </div>
+                   <div class="contact-box-icon left-float">
+                       <a href=""><span class="fa fa-envelope fa-2x"></span></a>
+                   </div>
+                   <div class="contact-box-icon left-float">
+                       <a href=""><span class="fa fa-google-plus fa-2x"></span></a>
+                   </div>
+                   </div>
+               </div>
+               <div class="contact-box-right right-float">
+                   <h1>OR CALL</h1>
+                   <h2>0800-000-482</h2>
+               </div>
+       </div>
+   </div>
+   </div>
+   <footer class="full">
+       <div class="box3 fixed">
+           <p>© 2016 Starbucks Coffee Company. All Rights Reserved.</p>
+       </div>
+   </footer>
+</body>
+</html>
