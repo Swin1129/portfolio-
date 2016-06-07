@@ -31,6 +31,8 @@ body,p.h1,h2,h3,h4,h5,h6
                     padding-left:15px;
                     padding-right:15px;}
         header{
+               height:100%;
+               overflow:hidden;
                /*background-image: url(img/%E7%B4%84%E7%BF%B0%E8%B5%B0%E8%B7%AF.jpg);*/
                background-color:#313131;
                /*background-position:center;
@@ -58,15 +60,8 @@ body,p.h1,h2,h3,h4,h5,h6
                  width:95%;
                  margin:auto;}
         .service-context{width:100%;}
-        .service-img{width:300px;
-                     height:300px;
-                     border-radius:50%;            
-                     background-image:url(img/johnnie-walker.png);
-                     background-color:#fff;
-                     background-size:80%;
-                     background-position: center;
-                     background-repeat: no-repeat;
-                     margin:auto;}
+        .service-img{width:100%;
+                    text-align: center;}
         .text-size{font-size: 1.2em}
         .solgan{border-top:1px solid #ccc;
                 border-bottom:1px solid #ccc;
@@ -178,19 +173,20 @@ body,p.h1,h2,h3,h4,h5,h6
                     text-align: center;
                     margin:auto;}
         .copyright{width:100%;}
-        .copyright-nav{width:277px;
+        .copyright-nav{width:245px;
                        margin:auto;}
         .copyright-nav ul{margin:0;
                           padding:0;}
         .copyright-nav li{float:left;
                           list-style-type: none;
                           margin-bottom: 5px;}
-        .copyright-nav li a{color:#fff;
+        .copyright-nav li a{
+                            color:#fff;
                             font-family:verdana;
                             text-decoration:none;
                             font-size:10px;
-                            padding-left:5px;
-                            padding-right:5px;}
+                            padding-left:3px;
+                            padding-right:3px;}
         .copyright-p{clear:both;
                      color:gray;
                      font-size:10px;

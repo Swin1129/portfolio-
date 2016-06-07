@@ -64,13 +64,17 @@
                          float:left;}
         .service-img{width:300px;
                      height:300px;
-                     border-radius:50%;            
-                     background-image:url(img/johnnie-walker.png);
+                     border-radius:50%;
+                     position: relative;
+                     /*background-image:url(img/johnnie-walker.png);
                      background-color:#fff;
                      background-size:80%;
                      background-position: center;
-                     background-repeat: no-repeat;
+                     background-repeat: no-repeat;*/
                      float:right;}
+        .service-img img {position: absolute;
+                          right:25px;
+                          top:25px;}
         .text-size{font-size: 1.2em}
         .solgan{border-top:1px solid #ccc;
                 border-bottom:1px solid #ccc;
