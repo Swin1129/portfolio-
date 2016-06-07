@@ -36,7 +36,7 @@
                       color:cadetblue;
                       font-size:20px;}
         header{
-               height:100%;
+               min-height:100%;
                overflow: hidden;
                /*background-image: url(img/%E7%B4%84%E7%BF%B0%E8%B5%B0%E8%B7%AF.jpg);*/
                background-color:#313131;
