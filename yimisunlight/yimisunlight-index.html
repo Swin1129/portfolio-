@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Unna' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bxslider/jquery.bxslider.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fancy/source/jquery.fancybox.css">
+    <link rel="stylesheet" href="fancy/source/helpers/jquery.fancybox-thumbs.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bxslider/jquery.bxslider.js"></script>
+    <script src="fancy/source/jquery.fancybox.js"></script>
+    <script src="fancy/source/helpers/jquery.fancybox-thumbs.js"></script>
+    <script src="jquery.cycle.all.js"></script>
+    <style>
+        body,ul,h1,h2,h3,h4,p {
+            padding:0;
+            margin:0;
+        }
+        .full {
+            width:100%;
+        }
+        .fixed {
+            width:960px;
+            margin: auto;
+        }
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .nav {
+            background-color: #101010;
+            height:70px;
+        }
+        .nav-sticky {
+            background-color: #101010;
+            height:70px;
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+        }
+        .logo {
+            width:150px;
+            height:70px;
+            background-image: url(image/logo-03.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            float:left;
+        }
+        .nav-right {
+            float:right;
+        }
+        .nav-right  li {
+             height:70px;
+             line-height: 70px;
+             list-style: none;
+             float:left;
+        }
+        .nav-right a {
+            display: block;
+            height:70px;
+            text-decoration: none;
+            color:white;
+            font-family:Playfair Display SC;
+            font-size:14pt;
+            padding-left:10px;
+            padding-right:10px;
+            transition: all 1s;
+        }
+        .nav-right a:hover {
+            color:darkorange;
+            height:50px;
+            border-bottom: 1px solid #fff;
+        }
+        #box1 {
+            padding-bottom: 25px;
+        }
+        .box1nav {
+            text-align: center;
+            margin-top:10px;
+            padding-bottom:15px;
+        }
+        .box1nav li {
+            list-style: none;
+            float:left;
+            margin-left:5px;
+            margin-right:5px;
+        }
+        .box1nav a {
+            display: block;
+            text-decoration: none;
+            color:black;
+            font-family:Playfair Display SC;
+            font-size:16pt;
+            margin-top: -15px;
+        }
+        header {
+            /*background-image: url(image/header1.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;*/
+        }
+        .slider img {
+            width:100%;
+            
+        }
+        #about {
+            padding-top:10px;
+        }
+        .about-box {
+            position:relative;
+            padding-bottom:10px;
+        }
+        .about-box img {
+            position:absolute;
+            right:0px;
+            bottom:0px;
+        }
+        h1 {
+            font-size: 50pt;
+            font-family: Playfair Display SC;
+        }
+        h2 {
+            font-size: 20pt;
+            font-family: Unna;
+            margin-top:-10px;
+        }
+        .about-box hr {
+            width:760px;
+            float:right;
+            border:1px solid #000;
+        }
+        .red {
+            color:red;
+        }
+        .about-context h3 {
+            padding-top:25px;
+            line-height: 20pt;
+            font-size:15pt;
+            font-weight:600;
+        }
+        .about-context p {
+            line-height:18pt;
+            margin-top: 15px;
+        }
+        #event {
+            padding-top:140px;
+        }
+        .title {
+            position: relative;
+            width:500px;
+            text-align: center;
+            margin: auto;
+        }
+        .line {
+            position: absolute;
+            width:500px;
+            bottom:12px;
+        }
+        .line-left {
+            width:150px;
+            height:2px;
+            background-color: #000;
+            float:left;
+        }
+        .line-right {
+            width:150px;
+            height:2px;
+            background-color: #000;
+            float:right;
+        }
+        .event-context {
+            margin-top:25px;
+        }
+        .event-context-inside {
+            float:left;
+        }
+        .event-context-box {
+            width:230px;
+            float: left;
+            padding-right:20px;
+        }
+        .event-picture {
+            width:230px;
+            height:230px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .event-picture img:hover {
+            opacity: .5;
+        }
+        .event-letter {
+            margin-top:15px;
+        }
+        .event-letter h3 {
+            text-align: center;
+            color:#000;
+            border-bottom: 2px solid #000;
+            padding-bottom:5px;
+            font-size:15pt;
+        }
+        .event-letter p {
+            color:#5d5d5d;
+            margin-top: 5px;
+            line-height: 20pt;
+            letter-spacing: 1px;
+        }
+        .event-letter a {
+            text-decoration: none;
+        }
+        .word-size {
+            font-size: 5pt;
+        }
+        .event-manager {
+            width:150px;
+            background-color:#e3ffe7;
+            float:right;
+            padding-bottom: 10px;
+        }
+        .event-manager h3{
+            color: #fff;
+            height:40px;
+            line-height: 40px;
+            font-size: 16pt;
+            font-family:Playfair Display SC; 
+            text-align: center;
+            border-bottom: 3px solid #fff;
+            margin-bottom:10px
+        }
+        .manager-date {
+            width:130px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            margin: auto;
+            font-family: Unna;
+        }
+        .manager-date h4 {
+            font-size: 16pt;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .manager-date p {
+            float: right;
+            width:90px;
+            border-left:1px solid #000;
+        }
+        .manager-date a {
+            text-decoration: none;
+            color: #000;
+        }
+        .manager-date a:hover {
+            color: red;
+        }
+        #room {
+            padding-top:140px;
+        }
+        .room-nav {
+            margin-top:20px;
+            text-align: center;
+        }
+        .room-nav ul {
+           display: inline-block
+        }
+        .room-nav li {
+            list-style: none;
+            float:left;
+            border-left:1px solid #000;
+            padding-left:15px;
+            padding-right:15px;
+        }
+        .room-nav li:first-child {
+            border-left: none;
+        }
+        .room-nav a {
+            display: block;
+            color:#000;
+            text-decoration: none;
+            font-size: 15pt;
+            transition: all;
+        }
+        .room-nav a:hover {
+            color:red; 
+        }
+        .room-context {
+            margin-top:25px;
+        }
+        .room-picture {
+            width:452px;
+            float:left;
+        }
+        .room-gallery img {
+            width:452px;
+        }
+        .room-thumbs {
+            margin-top:5px;
+        }
+        .room-thumbs img {
+            width:110px;
+        }
+        .active {
+                 opacity:.5;
+                }
+        .room-context-inside {
+            width:452px;
+            float:right;
+        }
+        .room-context h3 {
+            font-size: 20pt;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #000; 
+        }
+        .room-context ul {
+            margin-top:20px;
+            padding-left: 20px;
+        }
+        .room-context li {
+            line-height: 20pt;
+        }
+        #camera {
+            padding-top:140px;
+        }
+        .camera-context h3 {
+            color:darkorange;
+        }
+        .camera-context {
+            position: relative;
+            padding-top:20px;
+        }
+        .camera-context-inside {
+            width:452px;
+            margin-top:10px;
+            float: left;
+        }
+        .camera-context-inside h4 {
+            padding-bottom:5px;
+            padding-top:5px;
+            margin-top: 15px;
+            background-color:papayawhip;
+        }
+        .camera-context-inside ul {
+            padding-left:20px;
+            margin-top:15px;
+            line-height: 20pt;
+        }
+        .camera-context-inside p {
+            margin-top:10px;
+            margin-left:20px;
+        }
+        .camera-picture {
+            float:right;
+            width:452px;
+            height:440px;
+            overflow: hidden;
+            margin-top:25px;
+        }
+        #camera-picture-pager {
+            position: absolute;
+            z-index: 9999;
+            bottom: 5px;
+            right:150px;
+            z-index: -1;
+        }
+        #camera-picture-pager a{ 
+            background-color: #ddd;
+            text-decoration: none;
+            display: block;
+            float: left;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-radius: 50%;
+            font-size: 0;
+        }
+        #camera-picture-pager a.activeSlide{
+            background-color:orange;
+        }
+        /*對切換按鈕做動畫，前面為ID名稱，後面的s一定要大寫*/
+        #map {
+            padding-top: 140px;
+            padding-bottom:45px;
+        }
+        .map-context {
+            margin-top:25px;
+        }
+        .map-bk {
+             position: relative;
+             height:200px;
+             overflow: hidden;
+             /*background-image:url(image/car-line-03.png);
+             background-position: bottom;
+             background-size: contain;
+             background-repeat: no-repeat;*/
+        }
+        .map-line {
+            position: absolute;
+            bottom:0;
+        }
+        .map-line img {
+            width:960px;
+        }
+        .mood {
+            position: absolute;
+            bottom:-15px;
+            left:170px
+        }
+        .mood img {
+            width:85%;
+        }
+        .animation {
+            position: absolute;
+            bottom:-70px;
+            right:0;
+            animation-name: move;
+            animation-duration:5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+           
+        }
+        @keyframes move {from {right:0;}to{right:100%;}}
+        .map-picture {
+            float:left;
+        }
+        .map-picture img {
+            width: 452px;
+        }
+        .map-context-inside {
+            float:right;
+            width:452px;
+            padding-top:40px;
+        }
+        .map-context-inside h3 {
+            color: #fff;
+            font-size: 18pt;
+            background-color: coral;
+            padding-top:5px;
+            padding-bottom:5px;
+            text-align: center;
+        }
+        .map-context-inside h4 {
+            padding-top:10px;
+            padding-bottom:2px;
+            font-size: 15pt;
+            cursor:pointer;
+        }
+        .map-context-inside h4:hover {
+            color:coral;
+        }
+        .map-context-inside ul {
+            padding-left:20px;
+            border-top: 2px solid coral;
+        }
+        .map-context-inside li {
+            list-style: decimal;
+            font-size: 10pt;
+            line-height: 15pt;
+            padding-top:10px;
+        }
+        .map-context-inside p {
+            border-top: 2px solid coral;
+            padding-top:10px;
+            font-size:10pt;
+            line-height: 15pt;
+        }
+        #contact {
+            padding-top:140px;
+            padding-bottom:50px;
+            background-image: url(image/contact.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position:center;
+        }
+        .contact-context {
+            width:600px;
+            margin: auto;
+            background-color:rgba(0, 0, 0, 0.5);
+        }
+        .contact-context .title {
+            color:#fff;
+        }
+        .contact-context .line-left {
+            background-color: #fff;
+        }
+        .contact-context .line-right {
+            background-color:#fff;
+        }
+        .contact-context-inside {
+            text-align: center;
+            padding-top:25px;
+            color:#fff;
+            font-family: Unna;
+            font-size:14pt;
+            line-height: 21pt;
+            padding-bottom: 15px;
+            margin-bottom:50px;
+        }
+        .contact-context-inside a {
+            text-decoration: none;
+            color:#fff;
+        }
+        .contact-iconbox {
+            width:390px;
+            margin: auto;
+        }
+        .contact-icon {
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            float:left;
+            margin-left: 15px;
+            margin-right:15px;
+            text-align: center;
+            line-height: 105px;
+            color: #fff;
+            transition: all .5s;
+        }
+        .contact-icon:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .blue-bk {
+            background-color:#5185c5;
+        }
+        .orange-bk {
+            background-color:#F8B62D;
+        }
+        .red-bk {
+            background-color: red;
+        }
+        footer {
+            height:50px;
+            background-color: #101010;
+            text-align: center;
+            color: #fff;
+            font-family:Unna; 
+            line-height: 50px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var header_offset = $("header").offset().top;
+            console.log(header_offset);
+            $(window).scroll (function(){
+                var h = $(window).scrollTop();
+                if(h>header_offset){
+                    $(".nav").addClass("nav-sticky");
+                }else{
+                    $(".nav").removeClass("nav-sticky");
+                }
+            });
+            $(".slider").bxSlider({
+                auto:true,
+                mode:"fade",
+                speed:4000,
+            });
+            
+            $(".fancy").fancybox({
+                openEffect:"fade",//針對開啟相簿elastic(彈跳)，fade(淡入淡出)，none(無)
+                closeEffect:"fade",//針對關閉相簿elastic(彈跳)，fade(淡入淡出)，none(無)
+                prevEffect:"fade",//針對上一張
+                nextEffect:"fade",//針對下一張
+                openSpeed:1000,
+                closeSpeed:1000, 
+                PrevSpeed:1000,
+                nextSpeed:1000,//以上Speed都是對速度的控制，單位都是毫秒
+                padding:10,//為圖片開啟後的邊框寬
+                helpers:{
+                    title:{//針對標題位子上的更改
+                        type:"inside",//over(在圖片內右下)，float(在圖片外浮動於中間), inslide(圖片內和框相連右下)，outside(圖片外右下)
+                    },
+                    overlay:{//對照片開啟後的背景色做更改
+                        css:{background:"rgba(0,0,0,0.7)"//rgba(紅緣藍透明度)
+                            }
+                    },
+                    thumbs:{width:50,}//製作相簿內的縮圖切換
+                }
+            });
+            
+            $(".show-context3").fancybox({
+                    fitToView: true,
+                    width:420,
+                    height:600,
+                    closeClick: false,
+                    openEffect: 'none',
+                    closeEffect: 'none'
+            });
+            
+            $(".show-context").fancybox({
+                    fitToView: true,
+                    autoSize:true,
+                    closeClick: false,
+                    openEffect: 'none',
+                    closeEffect: 'none'
+            });
+            
+            $(".hide").hide();
+            $(".show").click(function(){
+              $(this).next("p").toggle();
+              $(this).next("ul").toggle();    
+            });
+            
+            $(".camera-picture").after("<div id='camera-picture-pager'>").cycle({
+                fx: "cover" , //這是針對cycle內的效果ex.shuffle, turnDown, zoom, scrollDown, fade...
+                speed:1000,//切換圖的時間(毫秒)
+                timeout:3000,//每張圖的停留時間(毫秒)
+                pager:"#camera-picture-pager"
+            });
+            
+            $(".room-thumbs").find("a").click(function(){
+              var imgs = $(this).find("img").attr("src");
+              $(".room-gallery").find("img").attr("src",imgs);
+              //.find()主要是使用在抓取某元素的後代元素，針對其修改
+              //.attr()主要是在抓取某元素的屬性，當.attr()改成.attr("屬性","預轉換的值")
+              //$(this)主要是等同於前一個動作的元素
+              //以下為製作縮圖點選後的效果
+              $(".room-thumbs").find("img").removeClass("active");
+              $(this).find("img").addClass("active");
+           });
+        });
+    </script>
+</head>
+<body>
+    <div id="box1" class="full clearfix">
+        <div class="illustraion full">
+            <img src="image/illustration.jpg" alt="" width="100%">
+        </div>
+        <div class="box1nav fixed">
+               <ul class="clearfix">
+                   <li>
+                       <img src="image/About.png" alt="">
+                       <a href="#about">關於 About</a>
+                   </li>
+                   <li>
+                       <img src="image/Event.png" alt="">
+                       <a href="#event">活動 Event</a>
+                   </li>
+                   <li>
+                       <img src="image/Room.png" alt="">
+                       <a href="#room">住宿 Room</a>
+                   </li>
+                   <li>
+                       <img src="image/Camera.png" alt="">
+                       <a href="#camera">攝影 Camera</a>
+                   </li>
+                   <li>
+                       <img src="image/Map.png" alt="">
+                       <a href="#map">交通 Map</a>
+                   </li>
+                   <li>
+                       <img src="image/Mail-1.png" alt="">
+                       <a href="#contact">聯絡 Contact</a>
+                   </li>
+               </ul>
+        </div>
+    </div>
+      <nav class="full nav">
+       <div class="navbox clearfix fixed">
+        <div class="logo"></div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#event">Event</a></li>
+                <li><a href="#room">Room</a></li>
+                <li><a href="#camera">Camera</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+       </div>
+    </nav>
+    <header class="full">
+        <ul class="slider">
+            <li><img src="image/header1.jpg" alt=""></li>
+            <li><img src="image/header2.jpg" alt=""></li>
+            <li><img src="image/header3.jpg" alt=""></li>
+            <li><img src="image/header4.jpg" alt=""></li>
+            <li><img src="image/header5.jpg" alt=""></li>
+        </ul>
+    </header>
+    <div id="about" class="full">
+       <div class="about-box fixed">
+               <img src="image/about-background.png" alt="" width="900px">
+               <img src="image/people.png" alt="" width="300px">
+               <h1>About</h1>
+               <h2>YIMISUNLIGHT<hr></h2>
+           <div class="about-context">
+               <h3 class="red">
+               被陽光祝福的幸福彼方，親手打造一個家<br>三心允諾認證 ”安心.貼心.歡心”
+               </h3>
+               <p>春天的洋裝、戴起夏天的草帽，
+                  <br>沿著台中國立美館旁的綠意漫走，
+                  <br>美好的日光穿過盎然的樹灑落一地斑斕，
+                  <br>風很輕、心很飛揚，循著芬芳的氣息我們來到靜謐的巷弄，
+                  <br>這裡，是被陽光祝福的地方──
+                  <br>一米陽光，妳正在尋找的幸福彼方。
+               </p>
+               <p>
+                  讓每個少女一見傾心的法式浪漫鄉村空間
+                  <br>一米陽光不僅是主人送給旅人的禮物，
+                  <br>也是新娘指定拍婚紗的地方
+                  <br>處處佈滿可愛寫意的雜貨，
+                  <br>巧心佈置的角落像是雜誌般令人驚艷
+                  <br>三間房風格不盡相同，有各自的甜蜜浪漫
+                  <br>戶外陽光庭園與綠油油的草地，
+                  <br>最適合來個幸福又芬芳的野餐時光！
+                </p>
+           </div>
+        </div>
+    </div>
+    <div id="event" class="full clearfix">
+        <div class="event-box fixed">
+            <div class="title">
+                <h1>Event</h1>
+                <div class="line">
+                <div class="line-left"></div>
+                <div class="line-right"></div>    
+                </div>
+                <h2>YIMISUNLIGHT</h2>
+            </div>
+            <div class="event-context clearfix">
+            <div class="event-context-inside">
+               <div class="event-context-box">
+                <div class="event-picture">
+                    <a href="image/header1.jpg" class="fancy" rel="picture-1"><img src="image/event-picture-1.jpg" alt=""></a>
+                    <a href="image/header2.jpg" class="fancy" rel="picture-1"></a>
+                    <a href="image/event-picture1-big5.jpg" class="fancy" rel="picture-1"></a>
+                    <a href="image/header3.jpg" class="fancy" rel="picture-1"></a>
+                </div>
+                <div class="event-letter">
+                    <a href="event-context-1.html" class="show-context" data-fancybox-type="iframe">
+                    <h3>《免費入住生活體驗》</h3>
+                    <p>一起趟台中一米陽光之旅，體驗法式鄉村風情居家生活快和朋友來場浪漫的約會!!...
+                    <br><span class="red">=> more</span>
+                    </p>
+                    </a>
+                </div>
+               </div>
+               <div class="event-context-box">
+                <div class="event-picture">
+                    <a href="image/event-picture-2-big1.jpg" class="fancy" rel="picture-2"><img src="image/event-picture-2.jpg" alt=""></a>
+                    <a href="image/event-picture-2-big2.jpg" class="fancy" rel="picture-2"></a>
+                    <a href="image/event-picture-2-big3.jpg" class="fancy" rel="picture-2"></a>
+                </div>
+                <div class="event-letter">
+                    <a href="https://www.facebook.com/events/1710569445892242/">
+                    <h3>《小小二手服飾市集》</h3>
+                    <p>號外號外!!!一米陽光將在4/30 (六)下午13:30~16:30
+                       舉辦小小二手服飾市集，除了提供可愛小雜貨販售外，
+                       其中也請到了大學生了沒的 小牛 MO 、Twinko的 可青…
+                       <br><span class="red">=> more</span>
+                    </p>
+                    </a>
+                </div>
+               </div>
+               <div class="event-context-box">
+                <div class="event-picture">
+                    <a href="image/event-picture-3big.jpg" class="fancy"><img src="image/event-picture-3.jpg" alt=""></a>
+                </div>
+                <div class="event-letter">
+                    <a href="event-context-3.html" class="show-context3" data-fancybox-type="iframe">
+                    <h3>《手作活動》</h3>
+                    <p>法式鄉村風花圈-<span class="word-size">Paris Rouge</span>
+                       <br>*成品約直徑28 cm <span class="word-size red ">(取最大外徑）</span> 
+                       <br>*依當季花材做同色系調整...
+                       <br><span class="red">=> more</span>
+                    </p>
+                    </a>
+                </div>
+               </div>
+            </div>
+            <div class="event-manager">
+                <h3>Overview</h3>
+                <div class="manager-date clearfix">
+                    <h4 class="show">-2016</h4>
+                    <p class="hide">
+                    <a href="javascript:;">- Jan.</a>
+                    <br><a href="javascript:;">- Feb.</a>
+                    <br><a href="javascript:;">- Mar.</a>
+                    <br><a href="javascript:;">- Apr.</a>
+                    <br><a href="javascript:;">- May.</a>
+                    <br><a href="javascript:;">- Jun.</a>
+                    <br><a href="javascript:;">- July.</a>
+                    <br><a href="javascript:;">- Aug.</a>
+                    <br><a href="javascript:;">- Sept.</a>
+                    <br><a href="javascript:;">- Oct.</a>
+                    <br><a href="javascript:;">- Nov.</a>
+                    <br><a href="javascript:;">-Dec.</a>
+                    </p>
+                    <h4 class="show">-2015</h4>
+                    <p class="hide">
+                    <a href="javascript:;">- Jan.</a>
+                    <br><a href="javascript:;">- Feb.</a>
+                    <br><a href="javascript:;">- Mar.</a>
+                    <br><a href="javascript:;">- Apr.</a>
+                    <br><a href="javascript:;">- May.</a>
+                    <br><a href="javascript:;">- Jun.</a>
+                    <br><a href="javascript:;">- July.</a>
+                    <br><a href="javascript:;">- Aug.</a>
+                    <br><a href="javascript:;">- Sept.</a>
+                    <br><a href="javascript:;">- Oct.</a>
+                    <br><a href="javascript:;">- Nov.</a>
+                    <br><a href="javascript:;">- Dec.</a>
+                    </p>
+                    <h4 class="show">-2014</h4>
+                    <p class="hide">
+                    <a href="javascript:;">- Jan.</a>
+                    <br><a href="javascript:;">- Feb.</a>
+                    <br><a href="javascript:;">- Mar.</a>
+                    <br><a href="javascript:;">- Apr.</a>
+                    <br><a href="javascript:;">- May.</a>
+                    <br><a href="javascript:;">- Jun.</a>
+                    <br><a href="javascript:;">- July.</a>
+                    <br><a href="javascript:;">- Aug.</a>
+                    <br><a href="javascript:;">- Sept.</a>
+                    <br><a href="javascript:;">- Oct.</a>
+                    <br><a href="javascript:;">- Nov.</a>
+                    <br><a href="javascript:;">- Dec.</a>
+                    </p>
+                    <h4 class="show">-2013</h4>
+                    <p class="hide">
+                    <a href="javascript:;">- Jan.</a>
+                    <br><a href="javascript:;">- Feb.</a>
+                    <br><a href="javascript:;">- Mar.</a>
+                    <br><a href="javascript:;">- Apr.</a>
+                    <br><a href="javascript:;">- May.</a>
+                    <br><a href="javascript:;">- Jun.</a>
+                    <br><a href="javascript:;">- July.</a>
+                    <br><a href="javascript:;">- Aug.</a>
+                    <br><a href="javascript:;">- Sept.</a>
+                    <br><a href="javascript:;">- Oct.</a>
+                    <br><a href="javascript:;">- Nov.</a>
+                    <br><a href="javascript:;">-Dec.</a>
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="room" class="full clearfix">
+        <div class="room-box fixed">
+            <div class="title">
+                <h1>Room</h1>
+                <div class="line">
+                <div class="line-left"></div>
+                <div class="line-right"></div>    
+                </div>
+                <h2>YIMISUNLIGHT</h2>
+            </div>
+            <div class="room-nav clearfix">
+                <ul class="clearfix">
+                    <li><a href="javascript:;">安堤卡</a></li>
+                    <li><a href="javascript:;">木屋</a></li>
+                    <li><a href="javascript:;">里昂</a></li>
+                    <li><a href="javascript:;">訂房注意事項</a></li>
+                    <li><a href="javascript:;">入住注意事項</a></li>
+                </ul>
+            </div>
+            <div class="room-context clearfix">
+             <div class="room-picture">
+                <div class="room-gallery">
+                    <img src="image/room-picture1.jpg" alt="">
+                </div>
+                <div class="room-thumbs">
+                    <a href="javascript:;"><img src="image/room-picture2.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="image/room-picture3.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="image/room-picture4.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="image/room-picture5.jpg" alt=""></a>
+                </div>
+             </div>
+             <div class="room-context-inside">
+                <h3>安堤卡<span class="word-size">《房間設備》</span></h3>
+                <ul>
+                    <li>標準雙人床 x 1</li>
+                    <li>吊椅 x 1</li>
+                    <li>法式實木梳妝桌椅組</li>
+                    <li>可使用1樓及2樓共2間的共用衛浴室</li>
+                    <li>40吋液晶電視 </li>
+                    <li>吹風機 , 電熱水瓶 , 3M過濾飲用水 , <br>基本盥洗用具<span class="word-size red">（沐浴乳/洗髮精/浴巾/無提供牙刷及牙膏）</span></li>
+                    <li>免費無線上網<span class="word-size red">（請自備NB）</span></li>
+                </ul>
+             </div>
+            </div>
+        </div>
+    </div>
+    <div id="camera" class="full clearfix">
+        <div class="camera-box fixed">
+            <div class="title">
+                <h1>Camera</h1>
+                <div class="line">
+                <div class="line-left"></div>
+                <div class="line-right"></div>    
+                </div>
+                <h2>YIMISUNLIGHT</h2>
+            </div>
+            <div class="camera-context clearfix">
+            <h3>一米陽光以溫馨居家鄉村風格提供「場地、空間租借」服務
+            <br>地點位在國立美術館旁，近勤美誠品綠園道，大面積自然的窗光，
+            <br>適合婚紗攝影，孕寫真，親子全家福寫真，專業網拍及商業產品攝影。
+            </h3>
+            <div class="camera-context-inside">
+               <h4>場地、空間租借攝影費用：</h4>
+                  <ul>
+                      <li>使用1樓空間，費用 800 元/H。</li>
+                      <li>使用1樓空間+任選1間房型+2樓小客廳，費用 1200 元/H。</li>
+                  </ul>
+               <h4>注意事項:</h4>
+                  <ul>
+                      <li>每組同行人數最多為六人<span class=" red">( 攝影師最多兩人 )</span>。</li>
+                      <li>基本租借時數為1小時。</li>
+                      <li>第2小時起，若拍攝時間超過10分鐘，則以半小時計算，超過半小時以1小時計算。</li>
+                      <li>提前預約勘景，確認預約需預付50%租金作為訂金。</li>
+                      <li>如需變更時間，請在三天前來電更改時間，如臨時取消恕無法退費。</li>
+                      <li>預約當日未前來使用，視同放棄使用權，恕無法退費及變更檔期。</li>
+                      <li>如因操作不當造成道具或場景損壞，需照價賠償。</li>
+                      <li>請勿攜帶寵物及禁止飲食，垃圾煩請自行清除帶走。</li>
+                  </ul>
+                  <p>PS.若有其他問題都歡迎來電詢問，謝謝!!</p>
+            </div>
+            <div class="camera-picture">
+                <img src="image/camera-picture1.jpg" alt="">
+                <img src="image/camera-picture2.jpg" alt="">
+                <img src="image/camera-picture3.jpg" alt="">
+                <img src="image/camera-picture5.jpg" alt="">
+                <img src="image/camera-picture8.jpg" alt="">
+                <img src="image/camera-picture7.jpg" alt="">
+                <img src="image/camera-picture9.jpg" alt="">
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="map" class="full clearfix">
+        <div class="map-box fixed">
+             <div class="title">
+               <h1>Map</h1>
+                <div class="line">
+                <div class="line-left"></div>
+                <div class="line-right"></div>    
+                </div>
+                <h2>YIMISUNLIGHT</h2>
+            </div>
+            <div class="map-context clearfix">
+               <div class="map-picture">
+                   <a href="image/map-picyure-03.png" class="fancy"><img src="image/map-picyure-03.png" alt=""></a>
+               </div>
+               <div class="map-context-inside">
+                   <h3>一米陽光路線資訊:</h3>
+                   <h4 class="show">開車的旅人:</h4>
+                   <p class="hide">國道一號 → 台中/中港交流道下(往台中火車站方向) → 台灣大道直開 → 右轉忠明南路 → 左轉存中街 → 抵達一米陽光。</p>
+                   <h4 class="show">搭大眾運輸的旅人:</h4>
+                   <ul class="hide">
+                       <li>
+                        從台中高鐵站出發：搭乘高鐵快捷公車159號(往台中公園方向)，土庫停車場(國家美術館站)下車。
+                       </li>
+                       <li>
+                        從台中火車站出發：在台中火車站對面統聯客運門口站牌，搭乘75號公車至五權西忠明南路口下車。
+                       </li>
+                       <li>
+                        從朝馬出發：可搭75號公車至五權西忠明南路口下車
+                       </li>
+                       <li>
+                        從中港轉運站出發：可搭75號公車至五權西忠明南路口下車。
+                       </li>
+                   </ul>
+                   <h4 class="show">從機場的旅人:</h4>
+                   <ul class="hide">
+                       <li>從松山機場出發：
+                          <br>搭乘巴士 → 先搭捷運電車到台北車站，轉搭國光或統聯客運巴士至台中火車站站下車。
+                          <br>搭乘高鐵 → 先搭捷運電車到台北車站，轉搭台灣高鐵至烏日站下車。
+                       </li>
+                       <li>從桃園機場出發：
+                          <br>搭乘巴士 → 建議搭乘巴士前往台中最快最方便。在機場可直接搭乘統聯或國光客運巴士至台中火車站站下車。
+                          <br>搭乘高鐵 → 在機場直接搭乘統聯巴士705前往高鐵桃園站，轉乘台灣高鐵至台中烏日站下車。                  
+                       </li>
+                       <li>從台中機場出發：
+                          <br>搭乘巴士 → 搭9號公車至西勢十巷口站下車，至光大里站搭乘56號公車，至五權西忠明南路口下車。
+                          <br>搭乘TAXI → 從台中機場至搭乘TAXI至一米陽光，車資約450元左右。
+                       </li>
+                   </ul>
+                   <h4 class="show">搭乘高鐵:</h4>
+                   <p class="hide">
+                    台北至台中烏日最快49分鐘;高雄到台中烏日最快42分鐘 → 下車後依照站內標示往車站1F就可以看到公車站牌，亦可搭計程車。
+                   </p>
+                   <h4 class="show">騎乘U-Bike:</h4>
+                   <p class="hide">從一米陽光步行3分鐘可抵達台中美術館U-Bike站。</p>
+               </div>
+            </div>
+            <div class="map-bk">
+             <div class="map-line">
+                 <img src="image/car-bk-03.png" alt="">
+             </div>
+             <div class="mood">
+                 <img src="image/mood.png" alt="">
+             </div>
+             <div class="animation"> 
+                 <img src="image/Map.png" alt="" width="250px">
+             </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="full">
+        <div class="contact-box fixed">
+           <div class="contact-context">
+            <div class="title">
+               <h1>Contact</h1>
+                <div class="line">
+                <div class="line-left"></div>
+                <div class="line-right"></div>    
+                </div>
+                <h2>YIMISUNLIGHT</h2>
+            </div>
+            <div class="contact-context-inside">
+                <p>Address : 台中市西區存中街33號
+                   <br>E-MAIL : thissunlight@gmail.com
+                   <br>Tel : 0985-563-825 ; +886985-563-825
+                   <br>Line ID : 0985563825
+                   <br>Dear b&b : <a href="http://dearbnb.com/bnb/yimisunlight-guesthouse/">http://dearbnb.com/bnb/yimisunlight-guesthouse/</a>
+                </p>
+            </div>
+           </div>
+           <div class="contact-iconbox clearfix">
+               <a href="https://www.facebook.com/yimisunlight/?fref=ts">
+               <div class="contact-icon blue-bk fa fa-facebook fa-4x"></div>
+               </a>
+               <a href="http://issunlight.blogspot.tw/">
+               <div class="contact-icon orange-bk fa fa-bold fa-4x"></div>
+               </a>
+               <a href="#box1">
+               <div class="contact-icon red-bk fa fa-home fa-4x"></div>
+               </a>
+           </div> 
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2016 yimisunlight, Designed by Swin.</p>
+    </footer>
+</body>
+</html>
