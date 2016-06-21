@@ -35,6 +35,8 @@
         .nav {
             background-color: #101010;
             height:70px;
+            position: absolute;
+            z-index: 9999;
         }
         .nav-sticky {
             background-color: #101010;
@@ -149,7 +151,7 @@
             margin-top: 15px;
         }
         #event {
-            padding-top:140px;
+            padding-top:90px;
         }
         .title {
             position: relative;
@@ -257,7 +259,7 @@
             color: red;
         }
         #room {
-            padding-top:140px;
+            padding-top:90px;
         }
         .room-nav {
             margin-top:20px;
@@ -322,7 +324,7 @@
             line-height: 20pt;
         }
         #camera {
-            padding-top:140px;
+            padding-top:90px;
         }
         .camera-context h3 {
             color:darkorange;
@@ -384,7 +386,7 @@
         }
         /*對切換按鈕做動畫，前面為ID名稱，後面的s一定要大寫*/
         #map {
-            padding-top: 140px;
+            padding-top: 90px;
             padding-bottom:45px;
         }
         .map-context {
@@ -470,7 +472,7 @@
             line-height: 15pt;
         }
         #contact {
-            padding-top:140px;
+            padding-top:145px;
             padding-bottom:50px;
             background-image: url(image/contact.jpg);
             background-repeat: no-repeat;
@@ -549,9 +551,9 @@
             $(window).scroll (function(){
                 var h = $(window).scrollTop();
                 if(h>header_offset){
-                    $(".nav").addClass("nav-sticky");
+                    $("nav").addClass("nav-sticky");
                 }else{
-                    $(".nav").removeClass("nav-sticky");
+                    $("nav").removeClass("nav-sticky");
                 }
             });
             $(".slider").bxSlider({
